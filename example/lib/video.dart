@@ -7,7 +7,7 @@ class VideoPage extends StatefulWidget {
 }
 
 class _VideoPageState extends State<VideoPage> {
-  String url = "https://v3.juhui600.com/20190529/MYXy1dwh/index.m3u8";
+  String url = null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

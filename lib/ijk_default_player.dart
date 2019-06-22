@@ -5,6 +5,8 @@ import 'package:ijkplayer/ui/ijk_controls_header.dart';
 import 'package:ijkplayer/core/ijk_player.dart';
 import 'package:ijkplayer/core/ijk_controller.dart';
 
+import 'core/ijk_value.dart';
+
 export 'package:ijkplayer/core/ijk_controller.dart';
 
 class IjkDefaultPlayer extends StatefulWidget {
@@ -17,6 +19,7 @@ class IjkDefaultPlayer extends StatefulWidget {
   final String url;
   final String title;
   final Function listener;
+
   @override
   _IjkDefaultPlayerState createState() => _IjkDefaultPlayerState();
 }
@@ -47,51 +50,53 @@ class _IjkDefaultPlayerState extends State<IjkDefaultPlayer> {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: ijkController.aspectRatio,
-      child: IjkPlayer(
-        controller: ijkController,
-        ijkControlsHeader: IjkControlsHeader(
-          title: widget.title,
-          controller: ijkController,
-        ),
-        ijkControlsFooter: IjkControlsFooter(
-          controller: ijkController,
-          fullscreenWidget: Scaffold(
-            body: AspectRatio(
-              aspectRatio: ijkController.aspectRatio,
-              child: IjkPlayer(
+      aspectRatio: ijkController?.aspectRatio ?? 16 / 9,
+      child: ijkController != null
+          ? IjkPlayer(
+              controller: ijkController,
+              ijkControlsHeader: IjkControlsHeader(
+                title: widget.title,
                 controller: ijkController,
-                isFullscreen: true,
-                ijkControlsHeader: IjkControlsHeader(
-                  title: widget.title,
-                  controller: ijkController,
-                ),
-                ijkControlsFooter: IjkControlsFooter(
-                  controller: ijkController,
-                ),
-                ijkControlsBuffering: IjkControlsBuffering(
-                  controller: ijkController,
+              ),
+              ijkControlsFooter: IjkControlsFooter(
+                controller: ijkController,
+                fullscreenWidget: Scaffold(
+                  body: AspectRatio(
+                    aspectRatio: ijkController.aspectRatio,
+                    child: IjkPlayer(
+                      controller: ijkController,
+                      isFullscreen: true,
+                      ijkControlsHeader: IjkControlsHeader(
+                        title: widget.title,
+                        controller: ijkController,
+                      ),
+                      ijkControlsFooter: IjkControlsFooter(
+                        controller: ijkController,
+                      ),
+                      ijkControlsBuffering: IjkControlsBuffering(
+                        controller: ijkController,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
-        ),
-        ijkControlsBuffering: IjkControlsBuffering(
-          controller: ijkController,
-        ),
-      ),
+              ijkControlsBuffering: IjkControlsBuffering(
+                controller: ijkController,
+              ),
+            )
+          : Container(color: Colors.black,),
     );
   }
 
   void _initPlayer() async {
-    if (widget.url.isEmpty) {
+    if (widget.url == null || widget.url.isEmpty) {
       return;
     }
     if (ijkController != null) {
       ijkController.pause();
       ijkController.dispose();
     }
-      ijkController = new IjkController.network(widget.url)..initialize();
+    ijkController = new IjkController.network(widget.url)..initialize();
     ijkController.addListener(() {
       if (widget.listener != null) {
         widget.listener(ijkController);

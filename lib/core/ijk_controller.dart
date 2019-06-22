@@ -15,6 +15,7 @@ class IjkController extends ValueNotifier<IjkValue> {
   bool _isDisposed = false;
   String dataSource;
   EventChannel _eventChannel;
+  IjkController() : super(IjkValue());
   IjkController.network(this.dataSource) : super(IjkValue());
 
   Future<void> initialize() async {
@@ -40,7 +41,11 @@ class IjkController extends ValueNotifier<IjkValue> {
     });
   }
 
-  double get aspectRatio => value.size != null ? value.size.width / value.size.height : 1.0;
+  double get aspectRatio {
+    print("-----------------");
+    print(value.size);
+    return value.size.width / value.size.height;
+  }
 
   @override
   Future<void> dispose() async {
