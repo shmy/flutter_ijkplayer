@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="335781b9-b982-4308-8c26-7bc0be0d8e61" name="Default Changelist" comment="" />
+    <list default="true" id="335781b9-b982-4308-8c26-7bc0be0d8e61" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/ijk_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/ijk_controller.dart" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
     <ignored path="$PROJECT_DIR$/.pub/" />
@@ -16,11 +19,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
+            <state relative-caret-position="209">
               <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/core/ijk_controller.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="40" column="3" lean-forward="true" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,6 +64,9 @@
       <find>dispose</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -68,22 +86,23 @@
         <option value="$PROJECT_DIR$/lib/ijk_player.dart" />
         <option value="$PROJECT_DIR$/lib/core/ijk_value.dart" />
         <option value="$PROJECT_DIR$/example/lib/video.dart" />
-        <option value="$PROJECT_DIR$/lib/core/ijk_controller.dart" />
         <option value="$PROJECT_DIR$/lib/core/ijk_player.dart" />
         <option value="$PROJECT_DIR$/lib/ui/ijk_controls_buffering.dart" />
         <option value="$PROJECT_DIR$/lib/ui/ijk_controls_footer.dart" />
         <option value="$PROJECT_DIR$/lib/ui/ijk_controls_header.dart" />
         <option value="$PROJECT_DIR$/lib/ijk_default_player.dart" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/lib/core/ijk_controller.dart" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="696" />
+    <option name="x" value="201" />
     <option name="y" value="23" />
-    <option name="width" value="1604" />
+    <option name="width" value="1680" />
     <option name="height" value="1027" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -128,17 +147,6 @@
             <path>
               <item name="ijkplayer" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="example" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="ijkplayer" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="example" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="lib" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="ijkplayer" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="lib" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
@@ -146,12 +154,6 @@
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="lib" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="core" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="ijkplayer" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="lib" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="ui" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -198,6 +200,14 @@
       <option name="presentableId" value="Default" />
       <updated>1560997147507</updated>
     </task>
+    <task id="LOCAL-00001" summary="updated">
+      <created>1561176773300</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1561176773300</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -214,12 +224,12 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.32244897" />
-      <window_info anchor="bottom" id="Run" order="1" visible="true" weight="0.45816326" />
+      <window_info anchor="bottom" id="Run" order="1" weight="0.45816326" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" />
       <window_info anchor="bottom" id="Debug" order="5" />
-      <window_info anchor="bottom" id="Terminal" order="6" weight="0.41938776" />
+      <window_info anchor="bottom" id="Terminal" order="6" visible="true" weight="0.41938776" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
@@ -259,6 +269,10 @@
       <window_info anchor="right" id="Flutter Outline" order="4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
     </layout-to-restore>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test/ijkplayer_test.dart">
@@ -434,23 +448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/core/ijk_value.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/core/ijk_controller.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/video.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -514,8 +511,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
+        <state relative-caret-position="209">
           <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/core/ijk_value.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/core/ijk_controller.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="40" column="3" lean-forward="true" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

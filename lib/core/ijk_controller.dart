@@ -40,7 +40,7 @@ class IjkController extends ValueNotifier<IjkValue> {
     });
   }
 
-  double get aspectRatio => (value.size.width / value.size.height) ?? 1.33;
+  double get aspectRatio => value.size != null ? value.size.width / value.size.height : 1.0;
 
   @override
   Future<void> dispose() async {
