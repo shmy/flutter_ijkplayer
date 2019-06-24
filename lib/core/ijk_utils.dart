@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 String formatTime(double sec) {
   Duration d = Duration(seconds: sec.toInt());
   final ms = d.inMilliseconds;
@@ -19,4 +21,20 @@ String formatTime(double sec) {
       '${hoursString == '00' ? '' : hoursString + ':'}$minutesString:$secondsString';
 
   return formattedTime;
+}
+PageRouteBuilder NoTransitionPageRoute(
+    {@required BuildContext context, @required TransitionBuilder builder}) {
+  return PageRouteBuilder(
+    settings: RouteSettings(isInitialRoute: false),
+    pageBuilder: (
+        BuildContext context,
+        Animation<double> animation,
+        Animation<double> secondaryAnimation,
+        ) {
+      return AnimatedBuilder(
+        animation: animation,
+        builder: builder,
+      );
+    },
+  );
 }

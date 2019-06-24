@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:ijkplayer/core/ijk_controller.dart';
 import 'package:ijkplayer/core/ijk_defs.dart';
 import 'package:ijkplayer/core/ijk_utils.dart';
-import 'package:ijkplayer/core/ijk_player.dart';
 
 class IjkControlsFooter extends StatefulWidget {
   IjkControlsFooter({
@@ -160,7 +159,7 @@ class _IjkControlsFooterState extends State<IjkControlsFooter> {
     await SystemChrome.setPreferredOrientations(
         [DeviceOrientation.landscapeLeft]);
     await Navigator.of(context)
-        .push(MaterialPageRoute(builder: (BuildContext context) {
+        .push(NoTransitionPageRoute(context: context, builder: (BuildContext context, Widget child) {
       return Scaffold(
         body: widget.fullscreenWidget,
       );
