@@ -5,8 +5,6 @@ import 'package:ijkplayer/ui/ijk_controls_header.dart';
 import 'package:ijkplayer/core/ijk_player.dart';
 import 'package:ijkplayer/core/ijk_controller.dart';
 
-import 'core/ijk_value.dart';
-
 export 'package:ijkplayer/core/ijk_controller.dart';
 
 class IjkDefaultPlayer extends StatefulWidget {
@@ -49,8 +47,8 @@ class _IjkDefaultPlayerState extends State<IjkDefaultPlayer> {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: ijkController?.aspectRatio ?? 16 / 9,
+    return Container(
+      height: MediaQuery.of(context).size.height / 3,
       child: ijkController != null
           ? IjkPlayer(
               controller: ijkController,
@@ -61,21 +59,18 @@ class _IjkDefaultPlayerState extends State<IjkDefaultPlayer> {
               ijkControlsFooter: IjkControlsFooter(
                 controller: ijkController,
                 fullscreenWidget: Scaffold(
-                  body: AspectRatio(
-                    aspectRatio: ijkController.aspectRatio,
-                    child: IjkPlayer(
+                  body: IjkPlayer(
+                    controller: ijkController,
+                    isFullscreen: true,
+                    ijkControlsHeader: IjkControlsHeader(
+                      title: widget.title,
                       controller: ijkController,
-                      isFullscreen: true,
-                      ijkControlsHeader: IjkControlsHeader(
-                        title: widget.title,
-                        controller: ijkController,
-                      ),
-                      ijkControlsFooter: IjkControlsFooter(
-                        controller: ijkController,
-                      ),
-                      ijkControlsBuffering: IjkControlsBuffering(
-                        controller: ijkController,
-                      ),
+                    ),
+                    ijkControlsFooter: IjkControlsFooter(
+                      controller: ijkController,
+                    ),
+                    ijkControlsBuffering: IjkControlsBuffering(
+                      controller: ijkController,
                     ),
                   ),
                 ),
@@ -84,7 +79,9 @@ class _IjkDefaultPlayerState extends State<IjkDefaultPlayer> {
                 controller: ijkController,
               ),
             )
-          : Container(color: Colors.black,),
+          : Container(
+              color: Colors.black,
+            ),
     );
   }
 

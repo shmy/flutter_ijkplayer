@@ -35,7 +35,7 @@ class _VideoPageState extends State<VideoPage> {
           MaterialButton(
             onPressed: () {
               setState(() {
-                url = "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8";
+                url = "https://eth.ppzuida.com/20190709/5873_e2600d88/index.m3u8";
               });
             },
             child: Text("set m3u8"),

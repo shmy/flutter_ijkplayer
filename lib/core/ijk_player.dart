@@ -19,7 +19,7 @@ class IjkPlayer extends StatefulWidget {
 
   final IjkController controller;
   final bool isFullscreen;
-   bool isLocked;
+  bool isLocked;
   final Widget ijkControlsHeader;
   final Widget ijkControlsFooter;
   final Widget ijkControlsBuffering;
@@ -30,8 +30,11 @@ class IjkPlayer extends StatefulWidget {
 
 class _IjkPlayerState extends State<IjkPlayer> {
   bool showControls = true;
+
   IjkController get _controller => widget.controller;
+
   bool get _isFullscreen => widget.isFullscreen;
+
   bool get _isLocked => widget.isLocked;
 
   @override
@@ -45,6 +48,7 @@ class _IjkPlayerState extends State<IjkPlayer> {
     _controller?.removeListener(_listener);
     super.dispose();
   }
+
   @override
   void didUpdateWidget(IjkPlayer oldWidget) {
     if (oldWidget.controller != widget.controller) {
@@ -52,18 +56,25 @@ class _IjkPlayerState extends State<IjkPlayer> {
     }
     super.didUpdateWidget(oldWidget);
   }
+
   @override
   Widget build(BuildContext context) {
     Widget child = Stack(
       children: <Widget>[
         // Texture
         Positioned.fill(
-            child: Container(
-          color: Colors.black,
-          child: _controller?.id != null
-              ? Texture(textureId: _controller.id)
-              : Container(),
-        )),
+          child: Container(
+            color: Colors.black,
+            child: Center(
+              child: AspectRatio(
+                aspectRatio: widget.controller?.aspectRatio ?? 16 / 9,
+                child: _controller?.id != null
+                    ? Texture(textureId: _controller.id)
+                    : Container(),
+              ),
+            ),
+          ),
+        ),
         // 加载层
         Positioned.fill(
           child: _buildLoadingLayer(),
@@ -72,7 +83,8 @@ class _IjkPlayerState extends State<IjkPlayer> {
         Positioned.fill(child: _buildControllerLayer()),
         // 控件层
         Positioned.fill(
-          child: showControls && !_isLocked ? _buildControlsLayer() : Container(),
+          child:
+              showControls && !_isLocked ? _buildControlsLayer() : Container(),
         ),
         // 弹出层
 //        Positioned.fill(child: null),
@@ -100,23 +112,28 @@ class _IjkPlayerState extends State<IjkPlayer> {
       onTap: _switchControls,
       child: Container(
         color: Colors.transparent,
-        child: showControls ? Stack(
-          children: <Widget>[
-            Positioned(
-              top: 0,
-              bottom: 0,
-              left: 20.0,
-              child: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    widget.isLocked = !widget.isLocked;
-                  });
-                },
-                child: Icon(_isLocked ? Icons.lock : Icons.lock_open, color: Colors.white,),
-              ),
-            ),
-          ],
-        ) : Container(),
+        child: showControls
+            ? Stack(
+                children: <Widget>[
+                  Positioned(
+                    top: 0,
+                    bottom: 0,
+                    left: 20.0,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          widget.isLocked = !widget.isLocked;
+                        });
+                      },
+                      child: Icon(
+                        _isLocked ? Icons.lock : Icons.lock_open,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            : Container(),
       ),
     );
   }
@@ -126,7 +143,6 @@ class _IjkPlayerState extends State<IjkPlayer> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         widget.ijkControlsHeader ?? Container(),
-
         widget.ijkControlsFooter ?? Container(),
       ],
     );
