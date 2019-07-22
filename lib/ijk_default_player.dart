@@ -11,10 +11,12 @@ class IjkDefaultPlayer extends StatefulWidget {
   IjkDefaultPlayer({
     Key key,
     @required this.url,
+    this.height,
     this.title = "",
     this.listener,
   }) : super(key: key);
   final String url;
+  final double height;
   final String title;
   final Function listener;
 
@@ -48,7 +50,7 @@ class _IjkDefaultPlayerState extends State<IjkDefaultPlayer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height / 3,
+      height: widget.height ?? MediaQuery.of(context).size.height / 3,
       child: ijkController != null
           ? IjkPlayer(
               controller: ijkController,
